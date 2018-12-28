@@ -17,7 +17,7 @@ public class InOrderTraversalBST {
 			if (node.left != null) {
 				inOrderTraversal(node.left, list);
 			}
-			System.out.println(node.val+" ");
+			System.out.println(node.val + " ");
 			list.add(node.val);
 
 			if (node.right != null) {
@@ -34,7 +34,7 @@ public class InOrderTraversalBST {
 		node.right = new TreeNode(6);
 		node.left.left = new TreeNode(1);
 		node.left.right = new TreeNode(2);
-				
+
 		bst.inorderTraversal(node);
 	}
 
