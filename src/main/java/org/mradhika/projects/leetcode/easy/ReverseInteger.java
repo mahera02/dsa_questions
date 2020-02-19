@@ -15,22 +15,39 @@ public class ReverseInteger {
 	 * 
 	 * 
 	 */
-
+	public int reverseBest(int x) {
+	      
+	      //without using long variable  
+	      int result = 0; 
+	        while(x!=0){
+	          int rem = x%10;
+	          x= x/10;
+	          int newNum = result*10+rem;
+	       if((newNum - rem)/10 !=result)
+	            return 0;
+	          
+	            result = newNum;
+	            
+	        }
+	      
+	       return result; 
+	    }
+	
 	public static int reverse(int x) {
 
 		String s = "";
+		int rev=0;
 		if (x < 0) {
 			s = "-";
 			x = x * -1;
 		}
 		while (x != 0) {
-			int rem = x % 10;
+		   rev =  rev * 10 + x % 10;
 			x = x / 10;
 			// System.out.println(rem);
-			if (rem >= 0) {
-				s = s + rem;
-			}
+			
 		}
+		s = s + rev;
 		//System.out.println(s);
 
 		Integer result;
