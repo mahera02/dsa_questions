@@ -23,23 +23,28 @@ public class ReverseVowels {
 	}
 
 	public static String reverseVowels(String s) {
-		char[] ch = s.toCharArray();
-		int left = 0;
-		int right = ch.length - 1;
-		while (left <= right) {
-			if (!isVowel(ch[left])) {
-				left++;
-			} else if (!isVowel(ch[right])) {
-				right--;
-			} else {
-				char temp = ch[right];
-				ch[right] = ch[left];
-				ch[left] = temp;
-				left++;
-				right--;
-			}
-		}
-		return String.valueOf(ch);
+		  
+        if(s!=null && s.trim().isEmpty())
+            return s;
+        char[] ch = s.toCharArray();
+        int left = 0;
+        int right = ch.length-1;
+        while(left<=right){
+            if(!isVowel(ch[left]))
+                left++;
+            else if(!isVowel(ch[right]))
+                right--;
+            else{
+                char temp = ch[left];
+                ch[left] = ch[right];
+                ch[right] = temp;
+                left++;
+                right--;
+            }
+                
+        }
+        
+        return new String(ch);
 	}
 
 	public static boolean isVowel(char ch) {
