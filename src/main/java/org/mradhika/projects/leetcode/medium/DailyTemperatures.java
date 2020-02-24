@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class DailyTemperatures {
 
+	//use stack to put index i
   public int[] dailyTemperatures(int[] T) {
     int[]  result = new int[T.length];
     Stack<Integer> stack = new Stack<>();
