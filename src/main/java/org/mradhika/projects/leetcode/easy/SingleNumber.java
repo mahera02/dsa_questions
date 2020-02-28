@@ -29,7 +29,7 @@ public class SingleNumber {
 		return 0;
 	}
        //O(n)
-	   public int singleNumberXOR(int[] nums) {
+	   public static int singleNumberXOR(int[] nums) {
 	        int result =0;
 	        for(int i = 0; i<nums.length;i++){
 	           result = result ^ nums[i];
@@ -37,7 +37,7 @@ public class SingleNumber {
 	        return result;
 	    }
 	public static void main(String[] args) {
-		System.out.println(SingleNumber.singleNumber(new int[] { 2, 3, 1, 4, 1, 2, 3 }));
+		System.out.println(SingleNumber.singleNumberXOR(new int[] { 2, 3, 1, 4, 1, 2, 3 }));
 
 	}
 
