@@ -5,37 +5,33 @@ import java.util.Stack;
 
 public class MinStack {
 	    /** initialize your data structure here. */
-	    Stack<Integer> s ;
+	    Stack<Integer> s = new Stack<>();
+	    int min = Integer.MAX_VALUE;;
 	    public MinStack() {
-	        s = new Stack<>();
+	       
 	    }
 	    
 	    public void push(int x) {
-	    	int y;
-	    	if(!s.isEmpty()) {
-	    		y = getMin();
-	    	}else {
-	    		y=x;
-	    	} 
+	    	if(x<=min) {
+	    		s.push(min);
+	    		min = x;
+	    	}
 	    	s.push(x);
-	    	s.push(Math.min(x,y));
 	    }
 	    
 	    public void pop() {
-	        s.pop();
-	        s.pop();
+	        int x = s.pop();
+	        if(x==min)
+	        	min=s.pop();
 	    }
 	    
 	    public int top() {
-	        int min = s.pop();
-	        int top =  s.peek();
-	        s.push(min);
-	        return top;
+	        return  s.peek();
 	    }
 	    
 	    public int getMin() {
 	        
-	          return s.peek();
+	          return min;
 	    }
 
 	/**
@@ -48,22 +44,24 @@ public class MinStack {
 	 */
 	public static void main(String[] args) {
 		MinStack obj = new MinStack();
-		  obj.push(2);
+		  obj.push(-2);
 		  obj.push(0);
-		  obj.push(3);
-		  obj.push(0);
+		  obj.push(-3);
+		  //obj.push(0);
 		 // obj.pop();
 		  
 		  System.out.println("min" + obj.getMin());
 		  obj.pop();
 		  System.out.println("pop  "  );
 		  System.out.println("min" + obj.getMin());
-		  obj.pop();
-		  System.out.println("pop  "  );
+		  
+		  System.out.println("top" + obj.top());
+		  //obj.pop();
+		  //System.out.println("pop  "  );
 		  System.out.println("min" + obj.getMin());
-		  obj.pop();
-		  System.out.println("pop  "  );
-		  System.out.println("min" + obj.getMin());
+		 // obj.pop();
+		 // System.out.println("pop  "  );
+		 // System.out.println("min" + obj.getMin());
 		  
 		 
 
