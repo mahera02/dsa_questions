@@ -8,7 +8,7 @@ import javax.print.attribute.HashAttributeSet;
 public class IntersectionOfTwoArrays2 {
 
 	public static void main(String[] args) {
-		int[] response = IntersectionOfTwoArrays2.intersect(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
+		int[] response = IntersectionOfTwoArrays2.intersect2(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 });
 		System.out.println(response[0]);
 		System.out.println(response.length);
 	}
@@ -33,6 +33,29 @@ public class IntersectionOfTwoArrays2 {
 			res[j] = list.get(j);
 		}
 		return res;
+	}
+
+	public static int[] intersect2(int[] nums1, int[] nums2) {
+		Arrays.sort(nums1);
+		Arrays.sort(nums2);
+		int n = nums1.length, m = nums2.length;
+		int i = 0, j = 0;
+		List<Integer> list = new ArrayList<>();
+		while (i < n && j < m) {
+			if (nums1[i] == nums2[j]) {
+				list.add(nums1[i]);
+				i++;
+				j++;
+			} else if (nums1[i]  < nums2[j] ) {
+				i++;
+			} else {
+				j++;
+			}
+		}
+		int[] ret = new int[list.size()];
+		for (int k = 0; k < list.size(); k++)
+			ret[k] = list.get(k);
+		return ret;
 	}
 
 }
