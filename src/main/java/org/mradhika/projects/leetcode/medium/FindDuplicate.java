@@ -1,12 +1,9 @@
 package org.mradhika.projects.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FindDuplicate {
 	public int findDuplicate(int[] nums) {
 
-		// based on tortoise hare detection algorithm
+		// based on tortoise hare detection algorithm - uses O(1) space without modifying the input array
 		int slow = nums[0];
 		int fast = nums[0];
 		do {
