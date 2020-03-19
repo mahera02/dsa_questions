@@ -6,6 +6,7 @@ public class HammingDistance {
 	        int countOfSetBits=0;
 	        while (z != 0) {
 	            countOfSetBits += z & 1;
+	            //right shift
 	            z = z >> 1;
 	        }
 	     return countOfSetBits;
