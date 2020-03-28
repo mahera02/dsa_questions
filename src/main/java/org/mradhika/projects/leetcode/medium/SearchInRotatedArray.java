@@ -1,7 +1,11 @@
 package org.mradhika.projects.leetcode.medium;
 
 public class SearchInRotatedArray {
-	public int search(int[] nums, int target) {
+	
+	public static void main(String[] args) {
+		SearchInRotatedArray.search(new int[] {4,5,6,7,0,1,2} ,4);
+	}
+	public static int search(int[] nums, int target) {
 		int pivot = findPivot(0, nums.length - 1, nums);
 		if (pivot == -1)
 			return binarySearch(0, nums.length - 1, nums, target);
@@ -16,7 +20,7 @@ public class SearchInRotatedArray {
 		return pivot;
 	}
 
-	public int binarySearch(int start, int end, int[] nums, int target) {
+	public static int binarySearch(int start, int end, int[] nums, int target) {
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
 			if (target == nums[mid])
@@ -30,7 +34,7 @@ public class SearchInRotatedArray {
 		return -1;
 	}
 
-	public int findPivot(int start, int end, int[] nums) {
+	public static int findPivot(int start, int end, int[] nums) {
 		if (start > end)
 			return -1;
 		if (start == end)
