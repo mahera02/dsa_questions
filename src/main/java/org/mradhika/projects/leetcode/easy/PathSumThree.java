@@ -6,6 +6,7 @@ public class PathSumThree {
 
 	static int count = 0;
 
+	//O(n2)
 	public int pathSum(TreeNode root, int sum) {
 		int total = 0;
 		if (root == null)
@@ -28,6 +29,8 @@ public class PathSumThree {
 		calcSum(root.right, sum, total);
 	}
 
+	
+	//O(n)
 	public static int pathSumBetter(TreeNode root, int sum) {
 
 		// key : the prefix sum, value : how many ways get to this prefix sum
